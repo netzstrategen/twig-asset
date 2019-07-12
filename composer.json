@@ -1,0 +1,21 @@
+{
+  "name": "drupal/twig_fractal",
+  "type": "drupal-module",
+  "description": "Fractal integration for Drupal.",
+  "license": "GPL-2.0+",
+  "authors": [
+    {
+      "name": "Fabian Marz",
+      "email": "fabian@netzstrategen.com"
+    },
+    {
+      "name": "Daniel Kudwien",
+      "email": "daniel@netzstrategen.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Drupal\\twig_fractal\\": "src/"
+    }
+  }
+}
