@@ -2,10 +2,10 @@
 
 /**
  * @file
- * Contains \Cue\twig\TwigExtensions.
+ * Contains \Cue\Twig\TwigExtensions.
  */
 
-namespace Cue\twig;
+namespace Cue\Twig;
 
 use Twig_Extension;
 

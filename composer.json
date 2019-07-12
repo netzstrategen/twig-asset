@@ -1,6 +1,5 @@
 {
-  "name": "drupal/twig_fractal",
-  "type": "drupal-module",
+  "name": "cue/twig_extensions",
   "description": "Fractal integration for Drupal.",
   "license": "GPL-2.0+",
   "authors": [
@@ -15,7 +14,7 @@
   ],
   "autoload": {
     "psr-4": {
-      "Drupal\\twig_fractal\\": "src/"
+      "Cue\\Twig\\": "src/"
     }
   }
 }
