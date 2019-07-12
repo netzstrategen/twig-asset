@@ -14,7 +14,7 @@
   ],
   "autoload": {
     "psr-4": {
-      "Cue\\Twig\\": "src/"
+      "Cue\\twig_extensions\\": "src/"
     }
   }
 }
