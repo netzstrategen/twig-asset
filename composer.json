@@ -1,6 +1,6 @@
 {
-  "name": "cue/twig_extensions",
-  "description": "Fractal integration for Drupal.",
+  "name": "netzstrategen/twig-asset",
+  "description": "asset() function for Twig.",
   "license": "GPL-2.0+",
   "authors": [
     {
@@ -14,7 +14,7 @@
   ],
   "autoload": {
     "psr-4": {
-      "Cue\\twig_extensions\\": "src/"
+      "Netzstrategen\\TwigAsset\\": "src/"
     }
   }
 }

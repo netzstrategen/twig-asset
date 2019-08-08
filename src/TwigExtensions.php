@@ -2,21 +2,17 @@
 
 /**
  * @file
- * Contains \Cue\twig_extensions\TwigExtensions.
+ * Contains \Netzstrategen\TwigAsset\TwigExtension.
  */
 
-namespace Cue\twig_extensions;
+namespace Netzstrategen\TwigAsset;
 
 use Twig_Environment;
 use Twig_Extension;
+use Twig_ExtensionInterface;
 use Twig_SimpleFunction;
-use Waiter\WaiterConfig;
-use Waiter\WaiterHelper;
 
-/**
- * @implements Twig_ExtensionInterface
- */
-class TwigExtensions extends Twig_Extension {
+class TwigExtension extends Twig_Extension implements Twig_ExtensionInterface {
 
   public function getFunctions() {
     return [
@@ -27,31 +23,31 @@ class TwigExtensions extends Twig_Extension {
   }
 
   /**
-   * Appends the filemtime to the given asset path to ensure cache invalidation.
+   * Appends the modification time to the given asset file path.
    *
    * @param Twig_Environment $env
    *   The current Twig environment.
-   * @param $asset_path
-   *   The given path to the asset.
-   * @param bool $is_versioned
-   *   If the asset should be versioned by appending the filemtime.
+   * @param string $path
+   *   The path to the asset file relative to the Twig environment.
+   * @param bool $add_version
+   *   Whether to append the file modification time. Defaults to TRUE.
    *
    * @return string
    */
-  public static function getAssetPath(Twig_Environment $env, $asset_path, $is_versioned = TRUE): string {
+  public static function getAssetPath(Twig_Environment $env, string $path, bool $add_version = TRUE): string {
     $globals = $env->getGlobals();
     $context_publication = $globals['contextPublication'];
     $template_path = realpath($context_publication['templateDir']);
-    $asset_abspath = $template_path . '/' . $asset_path;
+    $absolute_path = $template_path . '/' . $path;
 
-    if (is_dir($template_path) && is_file($asset_abspath) && $is_versioned) {
+    if ($add_version && file_exists($absolute_path)) {
       $query_string = http_build_query([
-        'v' => filemtime($asset_abspath),
+        'v' => filemtime($absolute_path),
       ]);
-      $asset_path = $asset_path . '?' . $query_string;
+      $path .= '?' . $query_string;
     }
 
-    return $asset_path;
+    return $path;
   }
 
 }
