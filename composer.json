@@ -18,6 +18,8 @@
     }
   },
   "scripts": {
-    "post-package-install": "mv php/src . && rm -r php"
+    "post-package-install": [
+      "mv php/src . && rm -r php"
+    ]
   }
 }
