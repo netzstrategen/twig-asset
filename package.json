@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {},
+  "main": "js/functions.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/netzstrategen/cue-twig-extensions.git"
