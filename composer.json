@@ -14,15 +14,7 @@
   ],
   "autoload": {
     "psr-4": {
-      "Netzstrategen\\TwigAsset\\": "src/"
+      "Netzstrategen\\TwigAsset\\": "php/src/"
     }
-  },
-  "scripts": {
-    "post-package-install": [
-      "mv php/src . && rm -r php"
-    ],
-    "post-package-update": [
-      "mv php/src . && rm -r php"
-    ]
   }
 }
