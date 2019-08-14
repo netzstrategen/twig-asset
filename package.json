@@ -1,0 +1,17 @@
+{
+  "name": "@netzstrategen/twig-asset",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/netzstrategen/cue-twig-extensions.git"
+  },
+  "author": "Fabian Marz <fabian@netzstrategen.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/netzstrategen/cue-twig-extensions/issues"
+  },
+  "homepage": "https://github.com/netzstrategen/cue-twig-extensions#readme",
+  "files": ["js/*"]
+}

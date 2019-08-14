@@ -37,12 +37,12 @@ class TwigExtension extends Twig_Extension implements Twig_ExtensionInterface {
   public static function getAssetPath(Twig_Environment $env, string $path, bool $add_version = TRUE): string {
     $globals = $env->getGlobals();
     if (!empty($globals['asset_path_document_root'])) {
-      $template_path = realpath($globals['asset_path_document_root']);
-      $asset_path = $template_path . '/' . $path;
+      $asset_root = realpath($globals['asset_path_document_root']);
+      $absolute_path = $asset_root . '/' . $path;
 
-      if ($add_version && file_exists($asset_path)) {
+      if ($add_version && file_exists($absolute_path)) {
         $query_string = http_build_query([
-          'v' => filemtime($asset_path),
+          'v' => filemtime($absolute_path),
         ]);
         $path .= '?' . $query_string;
       }
