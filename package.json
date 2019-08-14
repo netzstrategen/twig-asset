@@ -2,8 +2,10 @@
   "name": "@netzstrategen/twig-asset",
   "version": "1.0.0",
   "description": "",
-  "scripts": {},
-  "main": "js/functions.js",
+  "scripts": {
+    "postinstall": "mv js/* . && rm -r js"
+  },
+  "main": "functions.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/netzstrategen/cue-twig-extensions.git"
