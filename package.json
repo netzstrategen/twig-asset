@@ -3,15 +3,18 @@
   "version": "1.0.0",
   "description": "asset() function for Twig.",
   "main": "js/functions.js",
+  "files": ["js/*"],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/netzstrategen/cue-twig-extensions.git"
+    "url": "git+https://github.com/netzstrategen/twig-asset.git"
   },
   "author": "Fabian Marz <fabian@netzstrategen.com>",
-  "license": "MIT",
+  "contributors": [
+    "Daniel Kudwien <daniel@netzstrategen.com>",
+  ],
+  "license": "GPL-2.0+",
   "bugs": {
-    "url": "https://github.com/netzstrategen/cue-twig-extensions/issues"
+    "url": "https://github.com/netzstrategen/twig-asset/issues"
   },
-  "homepage": "https://github.com/netzstrategen/cue-twig-extensions#readme",
-  "files": ["js/*"]
+  "homepage": "https://github.com/netzstrategen/twig-asset#readme"
 }

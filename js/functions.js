@@ -12,10 +12,10 @@ module.exports = (config = {}) => {
 
   return {
     asset: (asset_path) => {
-      if (!config.path) {
+      if (!config.path_document_root) {
         return asset_path;
       }
-      const absolute_path = path.join(config.path, asset_path);
+      const absolute_path = path.join(config.path_document_root, asset_path);
       if (config.add_version && fs.existsSync(absolute_path)) {
         const stats = fs.statSync(absolute_path);
         const filemtime = Math.floor(stats.mtimeMs / 1000);
