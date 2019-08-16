@@ -6,7 +6,9 @@ A simple asset extension for twig which appends the file modification time of th
 ## Installation
 ### PHP
 1. Install package `$ composer require netzstrategen/twig-asset`
+
 2. Require package, set global twig variable and add to the twig environment:
+
     ```php
       <?php
    
