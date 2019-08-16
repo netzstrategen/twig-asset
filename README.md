@@ -18,12 +18,16 @@ A simple asset extension for twig which appends the file modification time of th
 
 ### JS
 1. Install package `$ npm install @netzstrategen/twig-asset --save`
-2. Require package and set config for document root:  
+
+2. Require package and set config for document root:
+
     ```js
     const TwigAsset = require('@netzstrategen/twig-asset')({
       asset_path_document_root: __dirname,
     });
+
 3. Register the `asset` function in twig:
+
     ```js
     yourTwigInstance.extendFunction('asset', TwigAsset.asset);
    // alternatively
@@ -43,12 +47,12 @@ A simple asset extension for twig which appends the file modification time of th
 ```
 
 ### 3rd party integrations
-- [Fractal](https://fractal.build)
-    ```js
-      const twigAdapter = require('@netzstrategen/twig-drupal-fractal-adapter');
-      const instance = fractal.components.engine(twigAdapter);
-      instance.twig.extendFunction('asset', TwigAsset.asset);
-    ``` 
+#### [Fractal](https://fractal.build)
+```js
+const twigAdapter = require('@netzstrategen/twig-drupal-fractal-adapter');
+const instance = fractal.components.engine(twigAdapter);
+instance.twig.extendFunction('asset', TwigAsset.asset);
+``` 
 
 ### Alternatives
 See Symfony for a more sophisticated solution (PHP only):
