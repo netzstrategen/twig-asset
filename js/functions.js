@@ -16,7 +16,7 @@ module.exports = (config = {}) => {
         return asset_path;
       }
       const absolute_path = path.join(config.path, asset_path);
-      if (fs.existsSync(absolute_path) && config.add_version) {
+      if (config.add_version && fs.existsSync(absolute_path)) {
         const stats = fs.statSync(absolute_path);
         const filemtime = Math.floor(stats.mtimeMs / 1000);
         const query_string = querystring.stringify({
