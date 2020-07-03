@@ -1,9 +1,11 @@
 {
   "name": "@netzstrategen/twig-asset",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "asset() function for Twig.",
   "main": "js/functions.js",
-  "files": ["js/*"],
+  "files": [
+    "js/*"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/netzstrategen/twig-asset.git"
