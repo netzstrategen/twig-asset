@@ -47,6 +47,9 @@ class TwigExtension extends Twig_Extension implements Twig_ExtensionInterface {
         $path .= '?' . $query_string;
       }
     }
+    if (!empty($globals['asset_url_prefix'])) {
+      $path = $globals['asset_url_prefix'] . $path;
+    }
     return $path;
   }
 

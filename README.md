@@ -21,6 +21,7 @@ This repository holds the extension for PHP and JS.
     use Netzstrategen\TwigAsset\TwigExtension as TwigAsset;
 
     $twig->addGlobal('asset_path_document_root', '<path/to/templates>');
+    $twig->addGlobal('asset_url_prefix', 'https://static.example.com'); // optional CDN integration
     $twig->addExtension(new TwigAsset());
     ``` 
 
@@ -61,6 +62,11 @@ instance.twig.extendFunction('asset', TwigAsset.asset);
 
     Acts as a base path. The path passed to the asset() function will be appended
     to this base path in order to retrieve the file's modification time.
+
+- `asset_url_prefix` (string, optional): URL prefix.
+
+    Prefixed to the resulting asset URL; e.g., to serve all static assets on a
+    separate domain.
 
 ## Usage
 
