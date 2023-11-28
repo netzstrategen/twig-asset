@@ -7,16 +7,16 @@
 
 namespace Netzstrategen\TwigAsset;
 
-use Twig_Environment;
-use Twig_Extension;
-use Twig_ExtensionInterface;
-use Twig_SimpleFunction;
+use Twig\Environment;
+use Twig\Extension\AbstractExtension;
+use Twig\Extension\ExtensionInterface;
+use Twig\TwigFunction;
 
-class TwigExtension extends Twig_Extension implements Twig_ExtensionInterface {
+class TwigExtension extends AbstractExtension implements ExtensionInterface {
 
   public function getFunctions() {
     return [
-      new Twig_SimpleFunction('asset', [$this, 'getAssetPath'], [
+      new TwigFunction('asset', [$this, 'getAssetPath'], [
         'needs_environment' => TRUE,
       ]),
     ];
@@ -25,7 +25,7 @@ class TwigExtension extends Twig_Extension implements Twig_ExtensionInterface {
   /**
    * Appends the modification time to the given asset file path.
    *
-   * @param Twig_Environment $env
+   * @param Environment $env
    *   The current Twig environment.
    * @param string $path
    *   The path to the asset file relative to the Twig environment.
@@ -34,7 +34,7 @@ class TwigExtension extends Twig_Extension implements Twig_ExtensionInterface {
    *
    * @return string
    */
-  public static function getAssetPath(Twig_Environment $env, string $path, bool $add_version = TRUE): string {
+  public static function getAssetPath(Environment $env, string $path, bool $add_version = TRUE): string {
     $globals = $env->getGlobals();
     if (!empty($globals['asset_path_document_root'])) {
       $asset_root = realpath($globals['asset_path_document_root']);
